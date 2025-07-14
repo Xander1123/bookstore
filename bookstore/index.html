@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon"  href="/images/favicon.png" />
+  <title>BookStore || Kitab Mağazası</title>
+
+</head>
+<body>
+  <!-- ✅ Header (Navbar daxilindədir) -->
+  <header>
+    <nav class="nav">
+      <div class="logo">BookStore</div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Ana Səhifə</a></li>
+        <li><a href="books.html"><i class="fas fa-book"></i> Kitablar</a></li>
+        <li><a href="authors.html"><i class="fas fa-user-pen"></i> Müəlliflər</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Əlaqə</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Səbət</a></li>
+      </ul>
+      <div class="search">
+        <input type="text" placeholder="Axtarış..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ✅ Hero bölməsi -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Kitab Mağazası</h1>
+      <p>Ən yeni və ən yaxşı kitabları kəşf edin!</p>
+      <a href="books.html" class="btn">Kitablara bax</a>
+      <a href="#books" class="btn btn-outline">Endirimlər</a>
+    </div>
+  </section>
+
+  <!-- ✅ Əsas kontent hissəsi -->
+  <main>
+    <!-- 📚 Kitab kartları -->
+    <section class="book-grid" id="books">
+      <article class="book-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71Q1tPupKjL.jpg" alt="Qürur və Qərəz" class="book-img" />
+        <div class="book-card-content">
+          <h3>Qürur və Qərəz</h3>
+          <p>Jane Austen'in klassik romanı - İngilis cəmiyyətində sevgi və evlilik haqqında unudulmaz hekayə.</p>
+          <div class="book-price">14.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <img src="https://m.media-amazon.com/images/I/81StSOpmkjL.jpg" alt="1984" class="book-img" />
+        <div class="book-card-content">
+          <h3>1984</h3>
+          <p>George Orwell'in distopik romanı - Totalitarizm, kütləvi nəzarət və həqiqətin təhrif edilməsi haqqında.</p>
+          <div class="book-price">12.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <img src="https://m.media-amazon.com/images/I/61RDGx0QdLL.jpg" alt="Cinayət və Cəza" class="book-img" />
+        <div class="book-card-content">
+          <h3>Cinayət və Cəza</h3>
+          <p>Fyodor Dostoyevskinin şedevri - Mənəvi əzab və günahkarlıq hissləri ilə mübarizə edən gənc tələbənin hekayəsi.</p>
+          <div class="book-price">16.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71DdHcKXQkL.jpg" alt="Kiçik Şahzadə" class="book-img" />
+        <div class="book-card-content">
+          <h3>Kiçik Şahzadə</h3>
+          <p>Antoine de Saint-Exupéry'nin bütün yaşlar üçün klassik əsəri - Həyatın mənası və insan münasibətləri haqqında.</p>
+          <div class="book-price">9.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81tEgsjN2VL.jpg" alt="Don Kixot" class="book-img" />
+        <div class="book-card-content">
+          <h3>Don Kixot</h3>
+          <p>Miguel de Cervantes'in əbədi əsəri - Macəra axtaran şövalyenin və sadiq silahdaşı Sanço Panza'nın hekayəsi.</p>
+          <div class="book-price">18.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71I+U7XGg7L.jpg" alt="Məbəd" class="book-img" />
+        <div class="book-card-content">
+          <h3>Məbəd</h3>
+          <p>Paulo Coelho'nun bestselleri - Santiago adlı çobanın şəxsi əfsanəsini kəşf etmək üçün səyahəti.</p>
+          <div class="book-price">11.99 AZN</div>
+          <div class="actions">
+            <a href="book-details.html" class="btn">Ətraflı</a>
+            <a href="cart.html" class="btn">Səbətə at</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ✅ Kateqoriyalar (aside ilə birlikdə) -->
+    <aside>
+      <h2>Kateqoriyalar</h2>
+      <ul>
+        <li><a href="category.html">Fəlsəfə</a></li>
+        <li><a href="category.html">Elm</a></li>
+        <li><a href="category.html">Tarix</a></li>
+        <li><a href="category.html">Ədəbiyyat</a></li>
+        <li><a href="category.html">Uşaq Kitabları</a></li>
+        <li><a href="category.html">Detektiv</a></li>
+        <li><a href="category.html">Fantastika</a></li>
+        <li><a href="category.html">Psixologiya</a></li>
+        <li><a href="category.html">Biznes</a></li>
+        <li><a href="category.html">Sənət</a></li>
+      </ul>
+      
+      <div class="best-sellers">
+        <h3>Ən Çox Satılanlar</h3>
+        <div class="bestseller-item">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71Q1tPupKjL.jpg" alt="Qürur və Qərəz" />
+          <div>
+            <div>Qürur və Qərəz</div>
+            <small>Jane Austen</small>
+          </div>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://m.media-amazon.com/images/I/81StSOpmkjL.jpg" alt="1984" />
+          <div>
+            <div>1984</div>
+            <small>George Orwell</small>
+          </div>
+        </div>
+        <div class="bestseller-item">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/71I+U7XGg7L.jpg" alt="Məbəd" />
+          <div>
+            <div>Məbəd</div>
+            <small>Paulo Coelho</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <p>&copy; 2025 BookStore. Bütün hüquqlar qorunur.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <ul>
+        <li><a href="privacy.html">Məxfilik Siyasəti</a></li>
+        <li><a href="terms.html">İstifadə Şərtləri</a></li>
+        <li><a href="contact.html">Əlaqə</a></li>
+        <li><a href="about.html">Haqqımızda</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
