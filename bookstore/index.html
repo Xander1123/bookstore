@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/images/favicon.png" />
   <title>BookStore || Kitab Mağazası</title>
  
 </head>
@@ -13,9 +14,7 @@
   <header>
     <nav class="nav">
       <div class="logo">BookStore</div>
-      <div class="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
+      
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Ana Səhifə</a></li>
         <li><a href="books.html"><i class="fas fa-book"></i> Kitablar</a></li>
@@ -23,13 +22,19 @@
         <li><a href="contact.html"><i class="fas fa-envelope"></i> Əlaqə</a></li>
         <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Səbət</a></li>
       </ul>
-      <div class="search">
-        <input type="text" placeholder="Axtarış..." />
-        <button type="submit"><i class="fas fa-search"></i></button>
+      
+      <div class="nav-right">
+        <div class="search">
+          <input type="text" placeholder="Axtarış..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <button class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-      </button>
     </nav>
   </header>
 
@@ -190,6 +195,10 @@
       </ul>
     </div>
   </footer>
-<script src="main.js"></script>
+
+
+
+  <script src="main.js"></script>
+ 
 </body>
 </html>
