@@ -1,3 +1,40 @@
+// Dark theme toggle functionality
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector("i");
+const body = document.body;
+
+// Check for saved theme preference or respect OS preference
+const savedTheme = localStorage.getItem("theme");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+// Set initial theme
+if (savedTheme === "dark" || (!savedTheme && prefersDarkScheme.matches)) {
+  body.classList.add("dark-theme");
+  themeIcon.classList.remove("fa-moon");
+  themeIcon.classList.add("fa-sun");
+}
+
+// Toggle theme
+themeToggle.addEventListener("click", () => {
+  themeToggle.classList.add("animate");
+
+  setTimeout(() => {
+    themeToggle.classList.remove("animate");
+  }, 600);
+
+  body.classList.toggle("dark-theme");
+
+  if (body.classList.contains("dark-theme")) {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+    localStorage.setItem("theme", "light");
+  }
+});
+
 // Mobile menu toggle
 document.querySelector(".menu-toggle").addEventListener("click", function () {
   document.querySelector(".nav-links").classList.toggle("active");
