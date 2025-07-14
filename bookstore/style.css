@@ -1,35 +1,65 @@
+:root {
+  /* Light Theme */
+  --primary-light: #4a6fa5;
+  --secondary-light: #6b8cbc;
+  --accent-light: #e74c3c;
+  --light-light: #f5f7fa;
+  --dark-light: #2c3e50;
+  --gray-light: #7f8c8d;
+  --gold-light: #f1c40f;
+  --text-light: #333;
+  --bg-light: #f9f9f9;
+  --card-light: #ffffff;
+  --footer-light: #2c3e50;
+  --hero-overlay-light: rgba(0, 0, 0, 0.7);
+
+  /* Dark Theme */
+  --primary-dark: #3a5a80;
+  --secondary-dark: #4a6b9c;
+  --accent-dark: #d84335;
+  --light-dark: #121212;
+  --dark-dark: #e0e0e0;
+  --gray-dark: #b0b0b0;
+  --gold-dark: #f1c40f;
+  --text-dark: #e0e0e0;
+  --bg-dark: #1a1a1a;
+  --card-dark: #242424;
+  --footer-dark: #121212;
+  --hero-overlay-dark: rgba(0, 0, 0, 0.8);
+}
+
 /* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-  --primary: #4a6fa5;
-  --secondary: #6b8cbc;
-  --accent: #e74c3c;
-  --light: #f5f7fa;
-  --dark: #2c3e50;
-  --gray: #7f8c8d;
-  --gold: #f1c40f;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--bg-light);
+  color: var(--text-light);
   line-height: 1.6;
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
 }
 
 /* Header Styles */
 header {
-  background-color: var(--primary);
+  background-color: var(--primary-light);
   color: white;
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme header {
+  background-color: var(--primary-dark);
 }
 
 .nav {
@@ -45,7 +75,11 @@ header {
   font-size: 1.8rem;
   font-weight: 700;
   cursor: pointer;
-  color: var(--light);
+  color: var(--light-light);
+}
+
+body.dark-theme .logo {
+  color: var(--light-light);
 }
 
 .nav-links {
@@ -80,16 +114,26 @@ header {
   border: none;
   border-radius: 4px 0 0 4px;
   width: 200px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-theme .search input {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-light);
 }
 
 .search button {
   padding: 0.6rem 1rem;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   color: white;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+body.dark-theme .search button {
+  background-color: var(--accent-dark);
 }
 
 .search button:hover {
@@ -103,13 +147,36 @@ header {
   color: white;
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
   height: 80vh;
   max-height: 600px;
   overflow: hidden;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(
+      var(--hero-overlay-light),
+      var(--hero-overlay-light)
+    ),
     url("/images/banner.jpg");
   background-size: cover;
   background-position: center;
@@ -117,6 +184,14 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+body.dark-theme .hero {
+  background: linear-gradient(
+      var(--hero-overlay-dark),
+      var(--hero-overlay-dark)
+    ),
+    url("/images/banner.jpg");
 }
 
 .hero-content {
@@ -141,7 +216,7 @@ header {
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -149,6 +224,10 @@ header {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+}
+
+body.dark-theme .btn {
+  background-color: var(--accent-dark);
 }
 
 .btn:hover {
@@ -185,13 +264,18 @@ main {
 }
 
 .book-card {
-  background: white;
+  background: var(--card-light);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+}
+
+body.dark-theme .book-card {
+  background: var(--card-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .book-card:hover {
@@ -203,7 +287,11 @@ main {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  border-bottom: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent-light);
+}
+
+body.dark-theme .book-card img {
+  border-bottom: 3px solid var(--accent-dark);
 }
 
 .book-card-content {
@@ -215,14 +303,22 @@ main {
 
 .book-card h3 {
   margin-bottom: 0.5rem;
-  color: var(--dark);
+  color: var(--dark-light);
+}
+
+body.dark-theme .book-card h3 {
+  color: var(--dark-dark);
 }
 
 .book-card p {
-  color: var(--gray);
+  color: var(--gray-light);
   margin-bottom: 1.2rem;
   font-size: 0.95rem;
   flex-grow: 1;
+}
+
+body.dark-theme .book-card p {
+  color: var(--gray-dark);
 }
 
 .book-card .actions {
@@ -239,28 +335,42 @@ main {
 }
 
 .book-price {
-  color: var(--accent);
+  color: var(--accent-light);
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0.5rem 0;
+}
+
+body.dark-theme .book-price {
+  color: var(--accent-dark);
 }
 
 /* Aside Styles */
 aside {
   flex: 1;
   min-width: 250px;
-  background: white;
+  background: var(--card-light);
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   height: fit-content;
 }
 
+body.dark-theme aside {
+  background: var(--card-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 aside h2 {
-  color: var(--dark);
+  color: var(--dark-light);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent-light);
+}
+
+body.dark-theme aside h2 {
+  color: var(--dark-dark);
+  border-bottom: 2px solid var(--accent-dark);
 }
 
 aside ul {
@@ -279,7 +389,7 @@ aside li:before {
 }
 
 aside a {
-  color: var(--gray);
+  color: var(--gray-light);
   text-decoration: none;
   transition: color 0.3s;
   display: block;
@@ -287,9 +397,18 @@ aside a {
   border-radius: 4px;
 }
 
+body.dark-theme aside a {
+  color: var(--gray-dark);
+}
+
 aside a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
   background-color: rgba(231, 76, 60, 0.1);
+}
+
+body.dark-theme aside a:hover {
+  color: var(--accent-dark);
+  background-color: rgba(216, 67, 53, 0.2);
 }
 
 .best-sellers {
@@ -298,9 +417,17 @@ aside a:hover {
   padding-top: 1.5rem;
 }
 
+body.dark-theme .best-sellers {
+  border-top: 1px solid #444;
+}
+
 .best-sellers h3 {
   margin-bottom: 1rem;
-  color: var(--dark);
+  color: var(--dark-light);
+}
+
+body.dark-theme .best-sellers h3 {
+  color: var(--dark-dark);
 }
 
 .bestseller-item {
@@ -318,11 +445,19 @@ aside a:hover {
   border: 1px solid #eee;
 }
 
+body.dark-theme .bestseller-item img {
+  border: 1px solid #444;
+}
+
 /* Footer */
 footer {
-  background-color: var(--dark);
+  background-color: var(--footer-light);
   color: white;
   padding: 2rem 5%;
+}
+
+body.dark-theme footer {
+  background-color: var(--footer-dark);
 }
 
 .footer-content {
@@ -355,7 +490,11 @@ footer {
 }
 
 .footer-content a:hover {
-  color: var(--accent);
+  color: var(--accent-light);
+}
+
+body.dark-theme .footer-content a:hover {
+  color: var(--accent-dark);
 }
 
 .social-icons {
@@ -377,8 +516,12 @@ footer {
 }
 
 .social-icons a:hover {
-  background-color: var(--accent);
+  background-color: var(--accent-light);
   transform: translateY(-3px);
+}
+
+body.dark-theme .social-icons a:hover {
+  background-color: var(--accent-dark);
 }
 
 /* Responsive Styles */
@@ -403,10 +546,14 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--primary-light);
     flex-direction: column;
     padding: 1rem 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  body.dark-theme .nav-links {
+    background-color: var(--primary-dark);
   }
 
   .nav-links.active {
@@ -424,6 +571,10 @@ footer {
 
   .search {
     display: none;
+  }
+
+  .theme-toggle {
+    margin-left: 10px;
   }
 
   .hero-content h1 {
@@ -491,15 +642,16 @@ footer {
   }
 }
 
-/* Banner Placeholder */
-.banner-placeholder {
-  display: none;
+/* Theme Switch Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Book Images */
-.book-img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-bottom: 3px solid var(--accent);
+.theme-toggle.animate {
+  animation: rotate 0.6s ease-in-out;
 }
